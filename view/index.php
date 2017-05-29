@@ -32,8 +32,12 @@
 
 <div id="sidebar"> <a href="#" class="visible-phone"><i class="icon icon-list"></i>Forms</a>
   <ul>
-    <li><a href="index.html"><i class="icon icon-home"></i> <span>Dashboard</span></a> </li>
-    <li><a href="charts.html"><i class="icon icon-signal"></i> <span>Charts &amp; graphs</span></a> </li>
+    <li class="submenu"> <a href="#"><i class="icon icon-info-sign"></i> <span>Rental</span> </a>
+      <ul>
+        <li><a href="error403.html">Add New</a></li>
+        <li><a href="error404.html">History</a></li>
+      </ul>
+    </li>
 
   </ul>
 </div>
@@ -142,6 +146,24 @@
               </div>
               <div id="form-wizard-2" class="step">
               <h5> RENTAL VEHICLE </h5>
+              <div class="control-group">
+                  <label class="control-label">Out</label>
+                  <div class="controls">
+                    <div  data-date="5-28-2017" class="input-append date datepicker">
+                      <input type="text" name="rentersOut" required="true"  data-date-format="mm-dd-yyyy" class="span11" >
+                      <span class="add-on"><i class="icon-th"></i></span> </div>
+                 </div>
+              </div>
+              <div class="control-group">
+                  <label class="control-label">IN</label>
+                  <div class="controls">
+                    <div  data-date="5-28-2017" class="input-append date datepicker">
+                      <input type="text" name="rentersIn" required="true"  data-date-format="mm-dd-yyyy" class="span11" >
+                      <span class="add-on"><i class="icon-th"></i></span> </div>
+                 </div>
+              </div>
+
+
                 <div class="control-group">
                   <label class="control-label">Vehicle Class</label>
                   <div class="controls">
@@ -167,6 +189,12 @@
                   </div>
                 </div>
                 <div class="control-group">
+                  <label class="control-label">Model </label>
+                  <div class="controls">
+                    <input  type="text" required name="vechiclemodel" />
+                  </div>
+                </div>
+                <div class="control-group">
                   <label class="control-label">Mileage Out</label>
                   <div class="controls">
                     <input type="number"  required name="vehiclemileageout"  />
@@ -185,16 +213,16 @@
                       <input type="radio" value="Empty" name="fuelout" />
                       Empty</label>
                     <label>
-                      <input type="radio" name="fuelout" />
+                      <input type="radio" value="1/4" name="fuelout" />
                       1/4</label>
                     <label>
-                      <input type="radio" name="fuelout" />
+                      <input type="radio" value="2/4" name="fuelout" />
                       2/4</label>
                      <label>
-                      <input type="radio" name="fuelout" />
+                      <input type="radio" value="3/4" name="fuelout" />
                       3/4</label>
                      <label>
-                      <input type="radio" name="fuelout" />
+                      <input type="radio" value="Full" name="fuelout" />
                       Full</label>
                   </div>
                 </div>
@@ -206,16 +234,16 @@
                       <input type="radio" value="Empty" name="fuelin" />
                       Empty</label>
                     <label>
-                      <input type="radio" name="fuelin" />
+                      <input type="radio" value="1/4"  name="fuelin" />
                       1/4</label>
                     <label>
-                      <input type="radio" name="fuelin" />
+                      <input type="radio" value="2/4" name="fuelin" />
                       2/4</label>
                      <label>
-                      <input type="radio" name="fuelin" />
+                      <input type="radio" value="3/4" name="fuelin" />
                       3/4</label>
                      <label>
-                      <input type="radio" name="fuelin" />
+                      <input type="radio" value="Full" name="fuelin" />
                       Full</label>
                   </div>
                 </div>
@@ -313,19 +341,22 @@
                 <div class="control-group">
                   <label class="control-label">TAX(9.00%) </label>
                   <div class="controls">
-                    <div id="taxes"></div>
+                   <input type="hidden"  disabled id="taxesh" name="taxesh" />
+                    <div id="taxesd"></div>
                   </div>
                 </div>
                 <div class="control-group">
                   <label class="control-label">PDC($9.95/DAY) </label>
                   <div class="controls">
+                   <input type="hidden" step="0.01"  disabled id="pdch" name="pdc" />
                     <div id="pdc"></div>
                   </div>
                 </div>
                 <div class="control-group">
                   <label class="control-label">TOTAL CHARGES </label>
                   <div class="controls">
-                      <input type="number" step="0.01"  disabled id="totalf" name="totalf" />
+                  <div id="totalff"></div>
+                      <input type="hidden" step="0.01"  disabled id="totalf" name="totalf" />
                   </div>
                 </div>
                 <div class="control-group">
@@ -343,7 +374,8 @@
                 <div class="control-group">
                   <label class="control-label">AMOUNT DUE </label>
                   <div class="controls">
-                    <input type="number" value="0" step="0.01" disabled id="amountdue" name="amountdue" />
+                  <div id="amountduediv"></div>
+                    <input type="hidden" value="0" step="0.01" disabled id="amountdue" name="amountdue" />
                   </div>
                 </div>  
               </div>
@@ -384,7 +416,6 @@
 <script src="js/jquery.peity.min.js"></script> 
 <script src="js/matrix.form_common.js"></script>  
 <script src="js/calculos.js"></script>  
-
 
 <script src="js/jquery.validate.js"></script> 
 
