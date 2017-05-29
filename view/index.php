@@ -1,3 +1,16 @@
+<?php 
+session_start();
+
+if( $_SESSION['count'] ==1){
+
+
+}else{
+  header('Location: login.php');
+}
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,24 +31,32 @@
 </head>
 <body>
 
+
 <!--Header-part-->
 <div id="header">
-  <h1><a href="dashboard.html">QUICK AUTO RENTALS</a></h1>
+  <h1><a href="index.php">QUICK AUTO RENTALS</a></h1>
 </div>
 <!--close-Header-part--> 
 
-
-
-
-
+<!--top-Header-menu-->
+<div id="user-nav" class="navbar navbar-inverse">
+  <ul class="nav">
+    <li  class="dropdown" id="profile-messages" ><a title="" href="#" data-toggle="dropdown" data-target="#profile-messages" class="dropdown-toggle"><i class="icon icon-user"></i>  <span class="text">USER OPTIONS</span><b class="caret"></b></a>
+      <ul class="dropdown-menu">
+        <li><a href="login.php"><i class="icon-key"></i> Log Out</a></li>
+      </ul>
+    </li>
+  </ul>
+</div>
 <!--sidebar-menu-->
+
 
 <div id="sidebar"> <a href="#" class="visible-phone"><i class="icon icon-list"></i>Forms</a>
   <ul>
     <li class="submenu"> <a href="#"><i class="icon icon-info-sign"></i> <span>Rental</span> </a>
       <ul>
-        <li><a href="error403.html">Add New</a></li>
-        <li><a href="error404.html">History</a></li>
+        <li><a href="index.php">Add New</a></li>
+        <li><a href="history.php">History</a></li>
       </ul>
     </li>
 
