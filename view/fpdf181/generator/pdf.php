@@ -21,25 +21,25 @@ function Header()
     $this->SetFont('Arial','B',10);
     // Movernos a la derecha
     $this->Cell(60);
-    // Título
+    // TÃ­tulo
     $this->Cell(40,10,'7120 Hayvenhurts Avenue #111 Van Nuys, ca 91344 ','C');
     $this->Ln(5);
     $this->Cell(61);
     $this->Cell(40,10,'TEL: 818-582-5912 | Mail:Quickarentals@gmail.com','C');
-    // Salto de línea
+    // Salto de lÃ­nea
     $this->Ln(20);
 
 }
 
 function Footer()
 {
-	// Posición a 1,5 cm del final
+	// PosiciÃ³n a 1,5 cm del final
 	$this->SetY(-15);
-	// Arial itálica 8
+	// Arial itÃ¡lica 8
 	$this->SetFont('Arial','I',8);
 	// Color del texto en gris
 	$this->SetTextColor(128);
-	// Número de página
+	// NÃºmero de pÃ¡gina
 	$this->Cell(0,10,'Page '.$this->PageNo(),0,0,'C');
 }
 
@@ -49,9 +49,9 @@ function ChapterTitle($num, $label)
 	$this->SetFont('Arial','',12);
 	// Color de fondo
 	$this->SetFillColor(200,220,255);
-	// Título
-	$this->Cell(0,6,"Capítulo $num : $label",0,1,'L',true);
-	// Salto de línea
+	// TÃ­tulo
+	$this->Cell(0,6,"CapÃ­tulo $num : $label",0,1,'L',true);
+	// Salto de lÃ­nea
 	$this->Ln(4);
 }
 
@@ -260,21 +260,32 @@ $this->Ln(6);
 	$this->SetFont('Arial','B',8);
 	$this->Cell(69,6,'PROPERTY DAMAGE COVERAGE(PDC)',0,0,'C',false);
 	$this->Cell(69,6,'YOU ACKNOWLEDGE AND CONFIRM THAT:',0,0,'C',false);
+
 	$this->Cell(69,10,'DAYS: '.$days,0,0,'L',false);
 
 
 
 
 	$this->Ln(5);
+	$this->SetFont('Arial','',6);
+	$this->Cell(69,6,'renter request property Damage Coverage at daily',0,0,'C',false);
 	$this->SetFont('Arial','B',8);
-	$this->Cell(69,6,'some text here',0,0,'C',false);
 	$this->Cell(69,6,'LIABILITY X_________:',0,0,'L',false);
-	$this->Cell(69,10,'DAILY RATE: '.$dayRate,0,0,'L',false);
+	$this->Ln(3);
+	$this->SetFont('Arial','',6);
+	$this->Cell(69,6,'fee Shown in adjoining column(THIS IS NOT ',0,0,'C',false);
+	$this->Ln(3);
+	$this->Cell(69,6,'LIABILITY INSURANCE) ',0,0,'C',false);
+
+	$this->SetFont('Arial','B',8);
+	$this->Cell(69,6,'COMPRENHENSIVE COLLISION X_____________',0,0,'L',false);
+	$this->SetFont('Arial','B',6);
+	$this->Cell(69,10,'DAILY RATE: $'.$dayRate,0,0,'L',false);
 	$this->Ln(5);
 	$this->SetFont('Arial','B',6);
 	$this->Cell(69,6,'* Declined *',0,0,'C',false);
-	$this->Cell(69,6,'COMPRENHENSIVE COLLISION X_____________',0,0,'C',false);
-	$this->Cell(69,10,'WEEKLY RATE: '.$weekrate,0,0,'L',false);
+	$this->Cell(69,6,'',0,0,'C',false);
+	$this->Cell(69,10,'WEEKLY RATE: $'.$weekrate,0,0,'L',false);
 	$this->Ln(5);
 	$this->SetFont('Arial','B',6);
 	$this->Cell(69,6,'X ________',0,0,'L',false);
@@ -282,48 +293,75 @@ $this->Ln(6);
 	$this->Cell(69,10,'EXCESS MILES: '.$excessMiles,0,0,'L',false);
 	$this->Ln(5);
 	$this->Cell(138);
-	$this->Cell(69,10,'RATE($35Mile): '.$rateExcess,0,0,'L',false);
+	$this->Cell(69,10,'RATE($35Mile): $'.$rateExcess,0,0,'L',false);
 	$this->Ln(5);
 	$this->Cell(138,6,'ACKNOWLEDGEMENT OF TERMS AND CONDITIONS',1,0,'C',true);
 	$this->Cell(69,10,'SUB TOTAL: '.$subTotal1,0,0,'C',false);
 	$this->Ln(5);
-	$this->Cell(138,6,'',0,0,'L',false);
-	$this->Cell(69,10,'REPAIRS: '.$repairs,0,0,'L',false);
+	$this->SetFont('Arial','',10);
+	$this->Cell(138,10,'RENTER EXPRESSLY ACKNOWLEDGES AND GREES THAT:',0,0,'L',false);
+	$this->SetFont('Arial','B',6);
+	$this->Cell(69,10,'REPAIRS: $'.$repairs,0,0,'L',false);
 	$this->Ln(5);
 	$this->Cell(138,6,'',0,0,'L',false);
-	$this->Cell(69,10,'FUEL/SERVICE: '.$service,0,0,'L',false);
+	$this->Cell(69,10,'FUEL/SERVICE: $'.$service,0,0,'L',false);
 	$this->Ln(5);
-	$this->Cell(138,6,'',0,0,'L',false);
-	$this->Cell(69,10,'CLEANING: '.$cleaning,0,0,'L',false);
-	$this->Ln(5);
-	$this->Cell(138,6,'',0,0,'L',false);
-	$this->Cell(69,10,'SUB TOTAL: '.$subTotal2,0,0,'C',false);
-	$this->Ln(5);
-	$this->Cell(138,6,'',0,0,'L',false);
-	$this->Cell(69,10,'TAX(9.00%): '.$tax,0,0,'L',false);
-	$this->Ln(5);
-	$this->Cell(138,6,'',0,0,'L',false);
-	$this->Cell(69,10,'PDC(9.95/DAY): '.$pdc,0,0,'L',false);
-	$this->Ln(8);
-	$this->Cell(138,6,'',0,0,'L',false);
-	$this->Cell(69,10,'TOTAL CHARGES: '.$Total,0,0,'L',false);
-	$this->Ln(5);
-	$this->Cell(138,6,'',0,0,'L',false);
-	$this->Cell(69,10,'DEPOSIT: '.$deposit,0,0,'L',false);
-	$this->Ln(5);
-	$this->Cell(138,6,'',0,0,'L',false);
-	$this->Cell(69,10,'PAYMENT: '.$payment,0,0,'L',false);
-	$this->Ln(10);
-	$this->Cell(138,6,'',0,0,'L',false);
-	$this->Cell(69,2,'AMOUNT DUE: '.$due,0,0,'L',false);
-	$this->Ln(5);
-	$this->Cell(138,6,'',0,0,'L',false);
-
-	$this->Ln(5);
-	$this->Cell(138,6,'',0,0,'L',false);
-
+	$this->SetFont('Arial','',7);
+	$this->Cell(138,6,'-The driver license presented at the time of rental is current and valid in the state of country in which it was issued. ',0,0,'L',false);
+	$this->SetFont('Arial','',6);
+	$this->Cell(69,10,'CLEANING: $'.$cleaning,0,0,'L',false);
+	$this->Ln(3);
+	$this->SetFont('Arial','',7);
+	$this->Cell(138,6,'-You are responsible for any traffic violations, handling fees and any charges incurred while rental vehicle in your possession.',0,0,'L',false);
+	$this->SetFont('Arial','',6);
+	$this->Cell(69,10,'SUB TOTAL: $'.$subTotal2,0,0,'C',false);
+	$this->Ln(3);
+	$this->SetFont('Arial','',7);
+	$this->Cell(138,6,'-These charges may or may not be paid by insurrance companies, body shops, attorneys and any third parties. All charges ',0,0,'L',false);
+	$this->SetFont('Arial','',6);
+	$this->Cell(69,15,'TAX(9.00%): $'.$tax,0,0,'L',false);
+	$this->Ln(3);
+	$this->SetFont('Arial','',7);
+	$this->Cell(138,6,"are the renter's responsibility. Insurance company billing is inerefy a courtesy.",0,0,'L',false);
+	$this->SetFont('Arial','',6);
+	$this->Cell(69,20,'PDC(9.95/DAY): $'.$pdc,0,0,'L',false);
+	$this->Ln(3);
+	$this->SetFont('Arial','',7);
+	$this->Cell(138,6,'-Your own insurance company may or may not provide Liability and Comprehensive Collision protection, you are responsible',0,0,'L',false);
+	$this->SetFont('Arial','',6);
+	$this->Cell(69,25,'TOTAL CHARGES: $'.$Total,0,0,'L',false);
+	$this->Ln(3);
+	$this->SetFont('Arial','',7);
+	$this->Cell(138,6,'for all collision/abuse, damage/loss to rental vehicle even if someone else cuased it or the cuase is unknown (this excludes',0,0,'L',false);
+	$this->SetFont('Arial','',6);
+	$this->Cell(69,30,'DEPOSIT: $'.$deposit,0,0,'L',false);
+	$this->Ln(3);
+	$this->SetFont('Arial','',7);	
+	$this->Cell(138,6,'mechanical failure). You are responsible for the cost of repair up to the value of rental vehicle plus loss of use lowing, ',0,0,'L',false);
+	$this->SetFont('Arial','',6);
+	$this->Cell(69,35,'PAYMENT: $'.$payment,0,0,'L',false);
+	$this->Ln(3);
+	$this->SetFont('Arial','',7);
+	$this->Cell(138,6,'storage, unpound fees and administrative charges (renters insurer may cover all or part of this)',0,0,'L',false);
+	$this->SetFont('Arial','',10);
+	$this->Cell(69,35,'AMOUNT DUE: $'.$due,0,0,'L',false);
+	$this->Ln(3);
+	$this->SetFont('Arial','',7);
+	$this->Cell(138,6,'-No one except renter could have a salvaged title.',0,0,'L',false);
+	$this->Ln(3);
+	$this->Cell(138,6,'-Renter warants that he/she has a valid insurance policy that includes Liability and comprenhensive Collision coverage',0,0,'L',false);
+	$this->Ln(3);
+	$this->Cell(138,6,'and that he/she will maintain this insurance during the term of this rental agreement.',0,0,'L',false);
+		$this->Ln(3);
+	$this->Cell(138,6,'-P.D>C or property damage COVERAGE covers the rental vehicle agains comprehensive or Collisions damage. There is',0,0,'L',false);
+	$this->Ln(3);
+	$this->Cell(138,6,' a $500.00 DEDUCIBLE for wich the renter will be responsible in clase of loss.',0,0,'L',false);
+		$this->Ln(5);
 	$this->SetFont('Arial','B',10);
-	$this->Ln(12);
+	$this->MultiCell(138,4, 'SIGNATURE BELLOW CONFIRMS THAT THE TERMSN AND CONDITIONS ON BOTH SIDES OF THIS AGREEMENT HAVE BEEN READ, SIGNATURE BELOW ALSO AUTHORIZES QUICK AUTO RENTALS TO BILL DIRECTLY FOR PAYMENT REFUSED BY A THIRD PARTY TO WHOM BILLING WAS DIRECTED.',0,'c');
+
+	$this->SetFont('Arial','',10);
+	$this->Ln(5);
 	$this->Cell(138,6,'RENTERS SIGNATURE: ___________________________________',0,0,'L',false);
 
 
@@ -333,19 +371,73 @@ $this->Ln(6);
 
 
 function Pagina2(){
-$texto = "";
-$this->Cell(0,0,'TITLE',0,0,'C',false);
+$this->SetFont('Arial','U',12);
+$this->Cell(0,0,'RENTAL CONTRACT AGREEMENT &',0,0,'C',false);
+$this->ln(5);
+$this->Cell(0,0,'LIMITED POWER OF ATTORNEY',0,0,'C',false);
 $this->ln(8);
 
-$this->MultiCell(190,6,'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin tincidunt ultricies magna hendrerit tristique. Integer ullamcorper urna non tortor eleifend faucibus. Cras eu placerat ex, et blandit quam. Integer eu odio urna. Suspendisse vel nibh diam. In rutrum sem et purus rhoncus, nec eleifend elit convallis. Quisque et leo non ipsum convallis maximus. Maecenas interdum lobortis finibus. Nam maximus, nibh id fringilla bibendum, mauris risus mattis massa, id gravida urna odio vitae metus. Duis tincidunt eros ex, et vestibulum nisl facilisis vitae. Fusce gravida, urna non consequat tincidunt, tortor elit convallis lectus, ut aliquet nibh diam et enim. Nulla varius vulputate urna volutpat suscipit. Morbi sit amet diam odio. Maecenas nec sem blandit, sagittis augue cursus, egestas sapien. In eget tincidunt elit. Donec gravida nisl libero, ut scelerisque dolor fermentum sed.
+$this->SetFont('Arial','B',10);
+$this->Cell(0,0,'1. WE DON NOT RENT VEHICLES FOR MOR THATN 30 DAYS.',0,0,'L',false);
+$this->ln(3);
+$this->SetFont('Arial','',10);
+$this->MultiCell(190,4,'Vehicles mus be returne on or before the 30th day of rental. Rental contrat can be renew or extended with a cash or credit card deposit.');
 
-Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed velit augue, ornare ut malesuada vitae, tempus ac lorem. Curabitur interdum risus ut magna rhoncus, egestas vestibulum lectus malesuada. Suspendisse ut fermentum est. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean erat risus, ultricies sed pulvinar in, porta sed eros. Nulla pellentesque condimentum ex, quis placerat nulla posuere vitae. Sed cursus aliquam neque eget bibendum.
+$this->ln(3);
+$this->SetFont('Arial','B',10);
+$this->Cell(0,0,'2. ACCIDENTS:',0,0,'L',false);
+$this->ln(2);
+$this->SetFont('Arial','',10);
+$this->MultiCell(190,4,'In case of an accident or material loss to the rental vehicle, QUICK AUTO RENTALS reserves the right to get the repairs done at our preferred repair facility. Renter CANNOT take rental vehicle to his/her own repair facility ');
 
-Cras cursus imperdiet ligula. Pellentesque ornare diam nec nisl pretium ornare. Donec justo dolor, porta in dui non, facilisis molestie nisi. Morbi lectus purus, mattis in vestibulum ut, luctus ut lorem. Donec facilisis velit arcu, sed feugiat enim feugiat sed. Maecenas fermentum tristique velit quis varius. Donec porttitor augue vitae dui semper elementum. Suspendisse ut nisi eu sapien blandit tempus semper at velit. Sed consequat velit eu libero aliquam, vitae tempus ipsum fermentum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eleifend lectus augue, in sollicitudin ante maximus eget. Sed et leo id mi fermentum pulvinar. Proin dui ligula, tempor eget tellus vel, aliquam accumsan massa. Donec bibendum sapien elit.
+$this->ln(3);
+$this->SetFont('Arial','B',10);
+$this->Cell(0,0,'3. RENTAL INTERIOR:',0,0,'L',false);
+$this->ln(2);
+$this->SetFont('Arial','',10);
+$this->MultiCell(190,4,'If the vehicle is return with stains, mud, paint, oilm gum or any other damage to the interior upholstery the renter will be responble for a $95.00 cleaning fee or the value to replace the interior part/component if it is deemed damage beyond repair.');
 
-Aliquam a ultricies nulla. Nam dignissim fringilla laoreet. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Pellentesque interdum ullamcorper massa eu blandit. Nullam vestibulum sit amet ante nec facilisis. Curabitur semper viverra elementum. Suspendisse ut pharetra est. Suspendisse eleifend eget purus faucibus blandit. Nullam mattis rutrum magna sed scelerisque. Nulla facilisis sollicitudin nunc ut tincidunt. Maecenas convallis eget sem sed consequat. Quisque sit amet consectetur sem. Cras feugiat turpis ac risus ultrices, sed pharetra orci pellentesque. Nullam ultricies nunc pharetra tempus vestibulum.
+$this->ln(3);
+$this->SetFont('Arial','B',10);
+$this->Cell(0,0,'4. RENTAL EXTERIOR:',0,0,'L',false);
+$this->ln(2);
+$this->SetFont('Arial','',10);
+$this->MultiCell(190,4,'Minor door dings to the rental vehicle are considered normal "wear and tear." Scratches where the paint has been damaged will need to repaired and repainted. Moderated and major collision damages will need to be evaluated by our preferred body shop and/or an insurance company. ' );
 
-Aenean mollis lacus nec venenatis luctus. Mauris pellentesque, nibh non varius auctor, eros elit varius erat, vel aliquam nulla dui sagittis eros. Donec non nisl at ipsum mattis aliquam eu in purus. Nullam scelerisque, tellus quis commodo vulputate, velit orci dapibus risus, vel vestibulum ante turpis in lectus. Nulla porta tortor quis tellus lacinia sodales. Sed elementum sapien sapien, et mollis est aliquam nec. Mauris id accumsan tellus, non facilisis elit. Interdum et malesuada fames ac ante ipsum primis in faucibus. Quisque euismod euismod ex, vel vehicula lacus semper et. Morbi rhoncus elit at ante convallis iaculis.');
+$this->ln(3);
+$this->SetFont('Arial','B',10);
+$this->Cell(0,0,'5. KEYS:',0,0,'L',false);
+$this->ln(2);
+$this->SetFont('Arial','',10);
+$this->MultiCell(190,4,"Renter ins responsible for lost keys including the vehicle's alarm remote control. If in case the keys a locked in the car reneter is resposible for calling a road side service company to get it unlocked. " );
+
+$this->ln(3);
+$this->SetFont('Arial','B',10);
+$this->Cell(0,0,'6. FLAT TIRES:',0,0,'L',false);
+$this->ln(2);
+$this->SetFont('Arial','',10);
+$this->MultiCell(190,4,'Flat tires are NOT considered normal "Wear and tear." Renter is responsible for the repair or replacemente of the damaged tire(s). If the vehicle is driven with a LOW or FLAT tire renter will be responsible for replacing the damaged tire(s) ' );
+
+$this->ln(3);
+$this->SetFont('Arial','B',10);
+$this->Cell(0,0,'7. MECHANICAL FAILURE:',0,0,'L',false);
+$this->ln(2);
+$this->SetFont('Arial','',10);
+$this->MultiCell(190,4,'If rental vehicle breaks down, renter is required to call QUICK AUTO RENTALS immediately and the rental company will make arragements for the vehicle to be towed back to our facility, Mechanical repairs CANNOT be performed by the renter or anyone on his/her behalf, Mecanichal failure/problems are not the rent'."'s ".'reponsibility unless our mechanic/repair shop concludes that mechanical failure was a result of renter'."'s ".'abuse to the rental vehicle'  );
+
+$this->ln(3);
+$this->SetFont('Arial','B',10);
+$this->Cell(0,0,'8. FUFEL CHARGES: ',0,0,'L',false);
+$this->ln(2);
+$this->SetFont('Arial','',10);
+$this->MultiCell(190,4,'If the rental vehicle is returned with less fuel than the original fuel level at the time the contract was signed, the retner will be responsible for a fuel charges of $4.00 per gallon.'  );
+$this->ln(3);
+$this->MultiCell(190,4,'I,________________________________________________________ do confer limited power of attorney to QUICK AUTO RENTALS, of 7120 hayvenhurts Avenue #111 Van Nuys, Ca 91344 as the true and lawful attorney for me and in my name, place and stead, and for my use and benefit regarding: CASHING OF INSURANCE CHECK/S PAYABLE TO MYSELF AND/OR MYSELF AND QUICK AUTO RENTALS.');
+$this->MultiCell(190,4,'Said Attorney in fact sahll not be limited or restricted by the foregoing specifications of the sutiacion. The Rights powers and authority of said attorneys-in-fact garanted in this instruments shall commerce and be in full force and effect on the date that I sign this Power of Attorney, and such rights, powers and authority shall remains in full force and effect thereafter until I give notice in wrigint that such power is terminated. This power of attorney conferred upon the aforementioned shall not be affected by any subsequent disability or incapacity that may befall me.');
+$this->MultiCell(190,4,'Furtherore, upon a finding of incompetence by a court of appropiate jurisdiction, this Power of Attoney shall be inrrevocable until such time court determines that I am no loger competent.');
+$this->ln(10);
+$this->Cell(120,4,'Signature: ____________________________________________',0,0,'L',false);
+$this->Cell(30,0,'Date: ______________',0,0,'L',false);
 
 }
 
@@ -359,9 +451,9 @@ function ChapterBody($file)
 	$this->SetFont('Times','',12);
 	// Imprimimos el texto justificado
 	$this->MultiCell(0,5,$txt);
-	// Salto de línea
+	// Salto de lÃ­nea
 	$this->Ln();
-	// Cita en itálica
+	// Cita en itÃ¡lica
 	$this->SetFont('','I');
 	
 }
