@@ -11,18 +11,23 @@ XAMPP for Windows 5.6.20
 
 
 
-SET UP PROJECT
+TO SET UP PROJECT
 
 FPDF  http://www.fpdf.org/
 
 Download XAMPP FOR APACHE AND MYSQL SERVER
 https://www.apachefriends.org/es/index.html
 
-
-
 1. clone repository into your apache php server
 2. Load data base located at bdd/rental.sql
-3. change the conexion to your mysql server: model/Conexion.php
+3. change the connection  to your mysql server: model/Conexion.php
 4. Go into localhost/RentaCars/view/
-
 5. Enjoy
+
+
+TO CHANGE THE PDF CONTENT 
+
+1. Go to RentaCars\view\fpdf181\generator\pdf.php 
+2. for page 1: change function "CustomerArea" at line 58
+3. for page 2: change function "Pagina2" at line 373 
+4. 
