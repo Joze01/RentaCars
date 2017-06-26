@@ -31,3 +31,6 @@ TO CHANGE THE PDF CONTENT
 2. for page 1: change function "CustomerArea" at line 58
 3. for page 2: change function "Pagina2" at line 373 
 4. 
+Users: 
+user: user
+password: 123456
